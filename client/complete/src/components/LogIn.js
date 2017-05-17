@@ -10,11 +10,12 @@ import '../css/login.css';
 
 
 class LogIn extends React.Component {
-  // constructor() {
-  //   super();
-  // }
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
-  _handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     //console.log('_handleSubmit....');
     // this.context.router.push(`/`);
@@ -52,17 +53,17 @@ class LogIn extends React.Component {
         //   </form>
         // </div>
         <div className="login">
-         <form onSubmit={this._handleSubmit.bind(this)}>
+         <form onSubmit={this.handleSubmit}>
            <p>
            <label>用户名</label>
-           <input ref='username' type="text" />
+           <input ref="username" type="text" />
            </p>
            <p>
            <label>密码</label>
-           <input ref='password' type="password" />
+           <input ref="password" type="password" />
            </p>
            <p>
-             <input className="submit button" type='submit' value="登录"/>
+             <input className="submit button" type="submit" value="登录"/>
            </p>
          </form>
        </div>

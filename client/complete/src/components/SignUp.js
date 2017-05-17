@@ -7,13 +7,14 @@ import PropTypes from 'prop-types';
 import '../css/signup.css';
 
 class SignUp extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state={
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.state={
+    // }
+  }
 
-  _handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     // console.log('_handleSubmit....');
     let _user = {
@@ -47,21 +48,21 @@ class SignUp extends React.Component {
         //   </form>
         // </div>
         <div className="signup">
-         <form onSubmit={this._handleSubmit.bind(this)}>
+         <form onSubmit={this.handleSubmit}>
            <p>
            <label>用户名</label>
-           <input ref='username' type="text" />
+           <input ref="username" type="text" />
            </p>
            <p>
            <label>密码</label>
-           <input ref='password' type="password" />
+           <input ref="password" type="password" />
            </p>
            <p>
            <label>再输一次</label>
-           <input ref='password' type="password" />
+           <input ref="password" type="password" />
            </p>
            <p>
-             <input className="submit button" type='submit' value="注册"/>
+             <input className="submit button" type="submit" value="注册"/>
            </p>
          </form>
        </div>

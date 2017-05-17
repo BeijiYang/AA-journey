@@ -3,14 +3,15 @@ import axios from 'axios';
 import config from '../../config';
 
 class Product extends React.Component {
-  constructor() {
-    super();
-    this.state={
-       cats: []
-    }
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.state={
+    //    cats: []
+    // }
   }
 
-  _getCats() {
+  getCats() {
     axios.get(`${config.host}/cats`)
       .then((res)=>{
         console.log(res.data.cats);
@@ -20,9 +21,9 @@ class Product extends React.Component {
   }
 
   componentWillMount(){
-    this._getCats();
+    this.getCats();
   }
-  _handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     console.log(this.refs.catId.value);
     let product = {
@@ -49,30 +50,30 @@ class Product extends React.Component {
     return (
         <div className="product">
           <span>新建商品</span>
-          <form onSubmit={this._handleSubmit.bind(this)}>
+          <form onSubmit={this.handleSubmit}>
             <p>
             name
-            <input ref='name' type="text" />
+            <input ref="name" type="text" />
             </p>
             <p>
             summery
-            <input ref='summary' type="text" />
+            <input ref="summary" type="text" />
             </p>
             <p>
             price:
-            <input ref='price' type="text" />
+            <input ref="price" type="text" />
             </p>
             <p>
             poster:
-            <input ref='poster' type="text" />
+            <input ref="poster" type="text" />
             </p>
             <p>
             <select name="catId" ref="catId">
-              { optionList }
+              {optionList}
             </select>
             </p>
             <p>
-              <input type='submit' />
+              <input type="submit" />
             </p>
           </form>
         </div>

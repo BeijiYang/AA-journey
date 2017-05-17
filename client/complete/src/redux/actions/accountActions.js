@@ -16,7 +16,7 @@
 
  export function fetchUser() {
    return dispatch => {
-     let userId = localStorage.getItem("userId");
+     let userId = localStorage.getItem('userId');
      if (userId) {
        axios.get(`${config.host}/user/${userId}`)
        .then((res) => {

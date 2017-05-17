@@ -7,12 +7,13 @@ import { connect } from 'react-redux';
 import '../css/new-cat.css';
 
 class NewCat extends React.Component {
-  // constructor() {
-  //   super();
-  //   this.state={
-  //     cats: []
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.state={
+    //   cats: []
+    // }
+  }
 
   componentWillMount() {
     // axios.get(`${config.host}/cats`).then(res => {
@@ -25,10 +26,10 @@ class NewCat extends React.Component {
     this.props.fetchCats();
   }
 
-  _handleSubmit(e){
+  handleSubmit(e){
     e.preventDefault();
     let catName = this.refs.catName.value;
-    console.log('_handleSubmit', catName);
+    console.log('handleSubmit', catName);
     this.refs.catName.value = ''; //已经取到，及时清空，下次再次使用
     // let data = {name: catName};
     // axios.post(`${config.host}/cat`, data)
@@ -39,11 +40,11 @@ class NewCat extends React.Component {
     this.props.createCat(catName);
   }
 
-  _updateCatList(){
-   axios.get(`${config.host}/cats`)
-     .then((res)=>this.setState({cats:res.data.cats}))
-     .catch(err=>console.log(err))
- }
+ //  updateCatList(){
+ //   axios.get(`${config.host}/cats`)
+ //     .then((res)=>this.setState({cats:res.data.cats}))
+ //     .catch(err=>console.log(err))
+ // }
 
  // _handleDelete(id){
  // //   console.log('_handleDelete', id);
@@ -80,11 +81,11 @@ class NewCat extends React.Component {
          <h1 className="title-dark-bg">新建分类</h1>
          <div className="container">
            <ul className="cat-list">
-             { catList }
+             {catList}
            </ul>
-           <form onSubmit={this._handleSubmit.bind(this)}>
-             <input ref='catName' type="text" />
-             <input className="submit" type='submit' value="创建分类"/>
+           <form onSubmit={this.handleSubmit}>
+             <input ref="catName" type="text" />
+             <input className="submit" type="submit" value="创建分类"/>
            </form>
          </div>
       </div>
