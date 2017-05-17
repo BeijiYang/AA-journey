@@ -11,7 +11,6 @@ class App extends React.Component {
         <div className='app'>
           <Header />
           { this.props.children }
-          <h1>Footer</h1>
         </div>
       </Provider>
     )

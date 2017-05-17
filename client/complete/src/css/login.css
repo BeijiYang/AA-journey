@@ -1,0 +1,29 @@
+.signin {
+  width: 500px;
+  margin: 100px auto;
+}
+
+.signin form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+.signin p {
+  width: 400px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.signin label  {
+  color: #00bcd4;
+  font-size: 1.5em;
+}
+.signin input {
+  width: 300px;
+  font-size: 1.5em;
+}
+
+.signin .submit {
+  width: 80px;
+  margin: 20px auto;
+}

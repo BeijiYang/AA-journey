@@ -7,16 +7,18 @@ import NewCat from './components/NewCat.js'
 import Product from './components/Product.js'
 import LogIn from './components/LogIn.js'
 import SignUp from './components/SignUp.js'
+import Profile from './components/Profile.js'
 
 export default function () {
   return(
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
-        <Route path='/new-cat' component={NewCat} />
-        <Route path='/new-product' component={Product} />
-        <Route path='/login' component={LogIn} />
-        <Route path='/signup' component={SignUp} />
+        <Route path='new-cat' component={NewCat} />
+        <Route path='new-product' component={Product} />
+        <Route path='login' component={LogIn} />
+        <Route path='signup' component={SignUp} />
+        <Route path='profile' component={Profile} />
       </Route>
     </Router>
   )

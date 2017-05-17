@@ -6,12 +6,13 @@ import { browserHistory } from 'react-router';
 
 import { login } from '../redux/actions/accountActions';
 import { connect } from 'react-redux';
+import '../css/login.css';
 
 
 class LogIn extends React.Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   _handleSubmit(e) {
     e.preventDefault();
@@ -34,22 +35,37 @@ class LogIn extends React.Component {
   }
   render(){
     return (
+        // <div className="login">
+        //   <span>登录</span>
+        //   <form onSubmit={this._handleSubmit.bind(this)}>
+        //     <p>
+        //     name:
+        //     <input ref='username' type="text" />
+        //     </p>
+        //     <p>
+        //     password:
+        //     <input ref='password' type="password" />
+        //     </p>
+        //     <p>
+        //       <input type='submit' />
+        //     </p>
+        //   </form>
+        // </div>
         <div className="login">
-          <span>登录</span>
-          <form onSubmit={this._handleSubmit.bind(this)}>
-            <p>
-            name:
-            <input ref='username' type="text" />
-            </p>
-            <p>
-            password:
-            <input ref='password' type="password" />
-            </p>
-            <p>
-              <input type='submit' />
-            </p>
-          </form>
-        </div>
+         <form onSubmit={this._handleSubmit.bind(this)}>
+           <p>
+           <label>用户名</label>
+           <input ref='username' type="text" />
+           </p>
+           <p>
+           <label>密码</label>
+           <input ref='password' type="password" />
+           </p>
+           <p>
+             <input className="submit button" type='submit' value="登录"/>
+           </p>
+         </form>
+       </div>
     )
   }
 }

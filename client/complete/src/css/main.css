@@ -1,3 +1,49 @@
-.app {
-   background-color: #bada55;
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #212121;
+}
+
+ul, li {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+
+h1.page-title {
+  width: 150px;
+  margin: 50px auto;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 4px solid #00bcd4;
+}
+h1.title-dark-bg {
+  background-color: #212121;
+  height: 200px;
+  line-height: 200px;
+  color: white;
+  margin: 0;
+  text-align: center;
+}
+
+.button {
+  background-color: #ff4081;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  display: block;
+  cursor: pointer;
 }

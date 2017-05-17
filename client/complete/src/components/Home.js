@@ -1,4 +1,5 @@
 import React from 'react';
+import '../css/home.css';
 
 class Home extends React.Component {
   constructor() {
@@ -9,8 +10,8 @@ class Home extends React.Component {
   }
   render(){
     return(
-      <div>
-         home
+      <div className='home'>
+         <h1 className="page-title"> 所有课程 </h1>
       </div>
     )
   }

@@ -1,4 +1,4 @@
-function cartReducer(state = [], action) {
+function cart(state = [], action) {
    switch(action.type) {
      case 'XXX':
        return []
@@ -6,5 +6,5 @@ function cartReducer(state = [], action) {
        return state;
    }
  }
- 
- export default cartReducer
+
+ export default cart;

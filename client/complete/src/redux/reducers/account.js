@@ -1,4 +1,4 @@
-function accountReducer(state = [], action) {
+function account(state = { currentUser: '' }, action) {
    switch(action.type) {
      case 'LOG_IN':
        console.log('LOG_IN');
@@ -14,4 +14,4 @@ function accountReducer(state = [], action) {
    }
  }
 
- export default accountReducer;
+ export default account;

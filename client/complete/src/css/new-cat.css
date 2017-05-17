@@ -1,0 +1,56 @@
+.new-cat {
+}
+
+.cat-list {
+  display: flex;
+  width: 500px;
+  margin: 40px auto;
+  justify-content: space-around;
+}
+.cat-list li {
+  border: 5px solid #00bcd4;
+  border-radius: 15px;
+  padding: 20px;
+  color: #00bcd4;
+  font-size: 1.5em;
+  position: relative;
+}
+.cat-list li span {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background-color: #212121;
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  width: 1.4em;
+  height: 1.4em;
+  line-height: 1.4em;
+  text-align: center;
+  color: white;
+}
+
+.new-cat form {
+  width: 400px;
+  margin: 60px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-cat .submit {
+  background-color: #ff4081;
+  color: white;
+  font-size: 1.5em;
+  padding: 10px 20px;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 140px
+}
+.new-cat form input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 300px;
+  font-size: 1.5em;
+}
