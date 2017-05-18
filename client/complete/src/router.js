@@ -9,6 +9,7 @@ import NewCourse from './components/NewCourse.js'
 import LogIn from './components/LogIn.js'
 import SignUp from './components/SignUp.js'
 import Profile from './components/Profile.js'
+import Order from './components/Order.js'
 
 export default function () {
   return(
@@ -20,6 +21,7 @@ export default function () {
         <Route path='login' component={LogIn} />
         <Route path='signup' component={SignUp} />
         <Route path='profile' component={Profile} />
+        <Route path='order' component={Order} />
       </Route>
     </Router>
   )

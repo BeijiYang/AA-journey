@@ -1,0 +1,32 @@
+.submit-order {
+  background-color: #212121;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.submit-order .container {
+  display: flex;
+  justify-content: space-around;
+}
+.total-fee {
+  width: 140px;
+  background-color: #fff;
+  padding: 20px;
+  align-self: center;
+  font-size: 1.5em;
+  color: #00bcd4;
+}
+
+
+.pay {
+  border: 5px solid #00bcd4;
+  background-color: #fff;
+  color: #00bcd4;
+  align-self: center;
+  font-size: 1.5em;
+  line-height: 3em;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  min-width: 150px;
+}
