@@ -1,9 +1,10 @@
-var Product = require('../models/product');
+// var Product = require('../models/product');
+var Course = require('../models/course');
 var Cat = require('../models/cat');
 
 exports.detail = function (req,res) {
   var id = req.params.id;
-  Product.findById(id).populate('cat', 'name').exec(function(err, product){
+  Course.findById(id).populate('cat', 'name').exec(function(err, product){
     if (err) return res.status(400).json({msg:'获取商品详情失败',err});
     res.json({
       msg: '获取商品详情成功',
@@ -13,9 +14,9 @@ exports.detail = function (req,res) {
 }
 // admin new product
 exports.new = function (req, res) {
-  var productObj = req.body;
+  var courseObj = req.body;
   var catId = req.body.cat;
-  console.log(catId);
+  //console.log(catId);
   Cat.findById(catId, function (err, cat) {
     if (err) return res.status(400).json({msg: '分类获取失败',err})
     if (!cat) {
@@ -23,15 +24,15 @@ exports.new = function (req, res) {
         msg: '分类不存在'
       })
     }else {
-      var product = new Product(productObj);
-      product.save(function (err, newproduct) {
+      var course = new Course(courseObj);
+      course.save(function (err, newCourse) {
         if (err) return res.status(500).json({msg: '新增商品失败', err});
-        cat.products.push(newproduct._id)
+        cat.courses.push(newCourse._id)
         cat.save(function (err) {
           if (err) return res.status(500).json({msg: '分类添加商品失败',err});
           res.json({
             msg: '新增商品成功',
-            product: newproduct
+            course: newCourse
           })
         })
       })
@@ -42,7 +43,7 @@ exports.new = function (req, res) {
 exports.del = function (req,res) {
   var id = req.params.id;
   if (id) {
-    Product.remove({_id: id}, function (err,product) {
+    Course.remove({_id: id}, function (err,product) {
       if (err) return res.status(400).json({msg: '删除商品失败',err});
       res.json({
         msg: '删除商品成功'
@@ -56,20 +57,20 @@ exports.del = function (req,res) {
 }
 // 获取所有商品或对应分类的商品
 exports.findAll = function (req, res) {
-  var limit = parseInt(req.query.limit, 10) || 2;
-  var page = parseInt(req.query.page, 10) || 0;
-  Product.count({}, function (err, totalCount) {
+  // var limit = parseInt(req.query.limit, 10) || 2;
+  // var page = parseInt(req.query.page, 10) || 0;
+  Course.count({}, function (err, totalCount) {
     if (err) return res.status(500).json({msg: '获取总数失败',err});
-    Product
+    Course
       .find({})
-      .limit(limit)
-      .skip(page*limit)
+      // .limit(limit)
+      // .skip(page*limit)
       .populate('category', 'name')
-      .exec(function (err, products) {
+      .exec(function (err, courses) {
         if (err) return res.status(400).json({msg: '获取商品失败',err})
         res.json({
           msg:'获取商品成功',
-          products,
+          courses,
           totalCount
         })
       })

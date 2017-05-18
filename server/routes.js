@@ -1,5 +1,5 @@
 var Cat = require('./controllers/cat');
-var Product = require('./controllers/product');
+var Course = require('./controllers/course');
 var User = require('./controllers/user');
 
 var bodyParser = require('body-parser');
@@ -14,9 +14,14 @@ module.exports = function(app) {
 
 
 
-  app.get('/product/all',Product.findAll);
-  app.get('/product/detail/:id',Product.detail);
-  app.post('/product/new',jsonParser,Product.new);
+  // app.get('/product/all',Product.findAll);
+  // app.get('/product/detail/:id',Product.detail);
+  // app.post('/product/new',jsonParser,Product.new);
+
+  app.get('/course/all',Course.findAll);
+  app.get('/course/detail/:id',Course.detail);
+  app.post('/course/new',jsonParser,Course.new);
+  app.delete('/course/delete/:id',Course.del);
 
   app.post('/user/signup',jsonParser,User.signup);
   app.post('/user/login',jsonParser,User.signin);

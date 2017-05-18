@@ -1,0 +1,51 @@
+ .new-course form {
+   width: 500px;
+   margin: 100px auto;
+ }
+
+ .new-course form input {
+   outline: none;
+   border: none;
+   border-bottom: 1px solid gray;
+   width: 300px;
+   font-size: 1.5em;
+ }
+ .new-course p {
+   width: 400px;
+   margin: 20px auto;
+   display: flex;
+   justify-content: space-between;
+ }
+ .new-course label  {
+   color: #00bcd4;
+   font-size: 1.5em;
+ }
+
+ .new-course .submit {
+   background-color: #ff4081;
+   color: white;
+   font-size: 1.5em;
+   padding: 10px 20px;
+   display: block;
+   margin: 30px auto;
+   cursor: pointer;
+   width: 100px
+ }
+
+ .new-course select {
+   background-color: #00bcd4;
+   color: #fff;
+   border: none;
+   font-size: 1.5em;
+ }
+ .new-course option {
+   line-height: 1.8;
+ }
+ .new-course select:focus {
+   outline: none;
+ }
+
+ .new-course input::placeholder {
+   color: #a7a6a6;
+   font-size: 16px;
+ }

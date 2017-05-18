@@ -6,9 +6,9 @@ var ObjectId = Schema.Types.ObjectId;
 const CatSchema = new Schema(
 	{
 		name:{type:String,require:true,unique:true},
-		products: [{
+		courses: [{
 	  type: ObjectId,
-	  ref: 'Product'
+	  ref: 'Course'
 	}]
 	},{
 		timestamps:true
