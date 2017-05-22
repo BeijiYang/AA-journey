@@ -37,4 +37,5 @@ module.exports = function(app) {
 
   //order
   app.post('/order/new', jsonParser, Order.add)
+  app.get('/order/all', Order.list)
 }

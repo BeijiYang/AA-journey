@@ -11,16 +11,27 @@ import SignUp from './components/SignUp.js'
 import Profile from './components/Profile.js'
 import Order from './components/Order.js'
 
+
+function requireAuth(nextState, replace) {
+   if (!localStorage.getItem('userId')) {
+     replace({
+       pathname: '/signin'
+     })
+   }
+ }
+
+
+
 export default function () {
   return(
     <Router history={browserHistory}>
       <Route path='/' component={App}>
         <IndexRoute component={Home}/>
-        <Route path='new-cat' component={NewCat} />
-        <Route path='new-course' component={NewCourse} />
+        <Route path='new-cat' onEnter={requireAuth} component={NewCat} />
+        <Route path='new-course' onEnter={requireAuth} component={NewCourse} />
         <Route path='login' component={LogIn} />
         <Route path='signup' component={SignUp} />
-        <Route path='profile' component={Profile} />
+        <Route path='profile' onEnter={requireAuth} component={Profile} />
         <Route path='order' component={Order} />
       </Route>
     </Router>

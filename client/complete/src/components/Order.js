@@ -26,6 +26,7 @@ class Order extends React.Component {
     });
     return(
       <div>
+        <h1 className="page-title"> 欲购课程 </h1>
         <ul className='course-list container'>
           {cartItems}
         </ul>

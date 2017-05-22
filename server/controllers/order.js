@@ -12,3 +12,13 @@
      })
    })
  }
+
+ exports.list = function (req, res) {
+    Order.find({}, function (err, orders) {
+      if (err) return res.status(500).json({err, msg: '获取失败，请重试'});
+      res.json({
+        msg: '获取成功',
+        orders
+      })
+    })
+  }
