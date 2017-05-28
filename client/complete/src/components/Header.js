@@ -40,5 +40,4 @@ const mapStateToProps = (state) => ({
   currentUser: state.account.currentUser
 });
 
-// export default Header;
 export default connect(mapStateToProps, {fetchUser, logout})(Header);

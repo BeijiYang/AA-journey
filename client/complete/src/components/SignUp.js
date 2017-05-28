@@ -10,13 +10,10 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.state={
-    // }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log('_handleSubmit....');
     let _user = {
                 username: this.refs.username.value,
                 password: this.refs.password.value
@@ -31,22 +28,6 @@ class SignUp extends React.Component {
   }
   render(){
     return (
-        // <div className="signin">
-        //   <span>注册</span>
-        //   <form onSubmit={this._handleSubmit.bind(this)}>
-        //     <p>
-        //     username:
-        //     <input ref='username' type="text" />
-        //     </p>
-        //     <p>
-        //     password:
-        //     <input ref='password' type="password" />
-        //     </p>
-        //     <p>
-        //       <input type='submit' />
-        //     </p>
-        //   </form>
-        // </div>
         <div className="signup">
          <form onSubmit={this.handleSubmit}>
            <p>

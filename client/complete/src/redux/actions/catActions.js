@@ -16,7 +16,6 @@
          .then((res) => {
            console.log(res);
            dispatch({type: 'ADD_CAT', _id: res.data.category._id, name: name})
-          //  dispatch({type: 'ADD_CAT', _id: "res.data.category._id", name: "name"})
          })
   }
 }

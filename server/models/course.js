@@ -8,7 +8,6 @@ var CourseSchema = new Schema({
   price: Number,
   poster: String,
   cat: {
-    // 注意，这里是反向引用，可以节省数据库查询时间
     type: ObjectId,
     ref: 'Cat'
   },

@@ -57,14 +57,10 @@ exports.del = function (req,res) {
 }
 // 获取所有商品或对应分类的商品
 exports.findAll = function (req, res) {
-  // var limit = parseInt(req.query.limit, 10) || 2;
-  // var page = parseInt(req.query.page, 10) || 0;
   Course.count({}, function (err, totalCount) {
     if (err) return res.status(500).json({msg: '获取总数失败',err});
     Course
       .find({})
-      // .limit(limit)
-      // .skip(page*limit)
       .populate('category', 'name')
       .exec(function (err, courses) {
         if (err) return res.status(400).json({msg: '获取商品失败',err})

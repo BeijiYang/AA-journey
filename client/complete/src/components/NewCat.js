@@ -10,19 +10,9 @@ class NewCat extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.state={
-    //   cats: []
-    // }
   }
 
   componentWillMount() {
-    // axios.get(`${config.host}/cats`).then(res => {
-    //   this.setState(
-    //     {
-    //        cats: res.data.cats
-    //     }
-    //   )
-    // })
     this.props.fetchCats();
   }
 
@@ -31,31 +21,8 @@ class NewCat extends React.Component {
     let catName = this.refs.catName.value;
     console.log('handleSubmit', catName);
     this.refs.catName.value = ''; //已经取到，及时清空，下次再次使用
-    // let data = {name: catName};
-    // axios.post(`${config.host}/cat`, data)
-    //      .then( (res) => {
-    //         console.log(res);
-    //         this._updateCatList();
-    //      })
     this.props.createCat(catName);
   }
-
- //  updateCatList(){
- //   axios.get(`${config.host}/cats`)
- //     .then((res)=>this.setState({cats:res.data.cats}))
- //     .catch(err=>console.log(err))
- // }
-
- // _handleDelete(id){
- // //   console.log('_handleDelete', id);
- // //   let cats = this.state.cats;
- // //   cats = cats.filter(value => value._id != id );
- // //   this.setState({cats});
- // //   axios.delete(`${config.host}/cat?id=${id}`).then(res => {
- // //     console.log(res.data);
- // //   });
- // this.props.removeCat(id)
- // }
 
   render(){
     let catList = this.props.cats.map((item, i) => {
@@ -68,15 +35,6 @@ class NewCat extends React.Component {
         }
     )
     return(
-      // <div>
-      //   <ul>
-      //     {catList.length == 0 ? '暂无分类': catList}
-      //   </ul>
-      //   <form onSubmit={this._handleSubmit.bind(this)}>
-      //     <input ref='catName' type='text' />
-      //     <input type='submit' />
-      //   </form>
-      // </div>
       <div className="new-cat">
          <h1 className="title-dark-bg">新建分类</h1>
          <div className="container">
